@@ -28,7 +28,7 @@ List installed packages and show details in sidebar. With `Enter` details are sh
 ## Dependencies
 
 - [yay](https://github.com/Jguer/yay)
-- [fzf](https://github.com/junegunn/fzf) (can be replaced [skim](https://github.com/lotabout/skim), it is waster but has worse sorting score on exact match)
+- [fzf](https://github.com/junegunn/fzf) (can be replaced with [skim](https://github.com/lotabout/skim), it is waster but has worse sorting score on exact match)
 - zsh/fish
 
 
