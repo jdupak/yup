@@ -14,3 +14,8 @@ function yup
             yay -Syu
     end
 end
+
+complete -c yup -s i -x -d "Install package"
+complete -c yup -s r -x -d "Remove package"
+complete -c yup -s d -x -d "Details about package"
+complete -c yup -s u -x -d "Update system"
