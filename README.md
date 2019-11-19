@@ -10,19 +10,19 @@ Simple script wrapping [yay](https://github.com/Jguer/yay) and adding fuzzy find
 
 List all packages and install selected. If parameter is supplied, it is given to fuzzy finder as default query.
 
-```yup -i [package_name]```
+```yup -i [package_name...]```
 
 ### Remove
 
 Works same way as install but for installed packages.
 
-```yup -r [parameter]```
+```yup -r [package_name...]```
 
 ### Details about package
 
 List installed packages and show details in sidebar. With `Enter` details are shown expanded in pager (default: less).
 
-```yup -d [package_name]```
+```yup -d [package_name...]```
 
 ### Update
 
