@@ -5,7 +5,9 @@ yup () {
 		-i) yup-i "$2";; # Install
 		-r) yup-r "$2";; # Remove
 		-d) yup-d "$2";; # Detail
-		-u) yay -Syu;;   # Update system
+		-u) yay -Syu; conf_dir=$XDG_CONFIG_HOME && [ -z "$conf_dir" ] && conf_dir="~/.config"
+						[ -f $conf_dir/updators.sh ] && sh $conf_dir/updators.sh
+;;   # Update system
 	esac
 }
 
