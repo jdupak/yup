@@ -12,9 +12,18 @@ List all packages and install selected. If parameter is supplied, it is given to
 
 ```yup -i [package_name...]```
 
+#### Alternative flags
+- `--install`
+- `i`
+- `install`
 ### Remove
 
 Works same way as install but for installed packages.
+
+- `-r`
+- `--remove`
+- `r`
+- `remove`
 
 ```yup -r [package_name...]```
 
@@ -34,6 +43,15 @@ Idea behind this is that every program which has some kind of update not managed
 
 ```yup -u```
 
+- `--update`
+- `u`
+- `update`
+
+### Remove orphaned packages
+- `-o`
+- `--orphaned`
+- `o`
+- `orphaned`
 ## Dependencies
 
 - [yay](https://github.com/Jguer/yay)

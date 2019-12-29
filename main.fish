@@ -3,17 +3,16 @@
 function yup -a flag -d "Yay UPgraded - with fuzzy search"
   set query $argv[2..-1]
 	switch $flag
-        case -i # Install
+        case -i --install i install
             set RES (yay -Slq | fzf -q "$query" -m --preview 'yay -Si {1}') &&
             yay -S $RES
-        case -r # Remove
+        case -r --remove r remove
             set RES (yay -Qq | fzf -q "$query" -m --preview 'yay -Qil {}') &&
             yay -Rns $RES
-        case -d # Detail
+        case -d --detail d detail
             yay -Qq | fzf -q "$query" --preview 'yay -Qil {}' --bind 'enter:execute(yay -Qil {} | less)'
-        case -u # Update system
+        case -u --update u update # Update system
 						echof "--bold" "Starting system upgrade..."
-						#yay -Syu  ## moved to updators
 
 						set conf_dir $XDG_CONFIG_HOME && [ -z "$conf_dir" ] && set conf_dir ~/.config
 						[ -f $conf_dir/updators.sh ] || echof "--bold red" "No file updators.sh found." && exit 1
@@ -56,6 +55,8 @@ function yup -a flag -d "Yay UPgraded - with fuzzy search"
 						else
 							echof "--bold" "[DONE] All tasks finished succesfully."
 						end
+				case -o --orphaned o orphaned
+						yay -Rns (yay -Qtdq)
 				case *
 						echo "No operation supplied"
     end
